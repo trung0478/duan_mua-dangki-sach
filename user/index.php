@@ -8,6 +8,8 @@ $sach_noibat = load_sach_noibat();
 $sach_new = load_sach_new();
 $sach_khuyenmai = load_sach_khuymai();
 $sp_theo_dm = load_ten_dm();
+$sach_kt=list_sach_by_dm_kt();
+
 
 include 'view/header.php';
 
