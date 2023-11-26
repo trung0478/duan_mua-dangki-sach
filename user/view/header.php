@@ -86,9 +86,9 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="account-area text-end">
                             <ul>
-                                <li><a href="index.php?action=taikhoankh">Tài Khoản của tôi</a></li>
-                                <li><a href="index.php?action=dangky">Đăng ký</a></li>
-                                <li><a href="index.php?action=dangnhap">Đăng nhập</a></li>
+                                <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
+                                <li><a href="index.php?act=dangky">Đăng ký</a></li>
+                                <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
                             </ul>
                         </div>
                     </div>
@@ -174,82 +174,11 @@
                         <div class="menu-area">
                             <nav>
                                 <ul>
-                                    <li class="active"><a href="index.php">Trang chủ<i class="fa fa-angle-down"></i></a>
+                                    <li class="active"><a href="index.php">Trang chủ</a></li>
+                                    <li><a href="index.php?act=sanpham">Sách</a></li>
+                                    <li><a href="index.php?act=gioithieu">Giới thiệu</a>
                                     </li>
-                                    <li><a href="index.php?action=sanpham">Sách<i class="fa fa-angle-down"></i></a>
-                                        <div class="mega-menu">
-                                            <span>
-                                                <a href="#" class="title">Jackets</a>
-                                                <a href="shop.html">Tops & Tees</a>
-                                                <a href="shop.html">Polo Short Sleeve</a>
-                                                <a href="shop.html">Graphic T-Shirts</a>
-                                                <a href="shop.html">Jackets & Coats</a>
-                                                <a href="shop.html">Fashion Jackets</a>
-                                            </span>
-                                            <span>
-                                                <a href="#" class="title">weaters</a>
-                                                <a href="shop.html">Crochet</a>
-                                                <a href="shop.html">Sleeveless</a>
-                                                <a href="shop.html">Stripes</a>
-                                                <a href="shop.html">Sweaters</a>
-                                                <a href="shop.html">hoodies</a>
-                                            </span>
-                                            <span>
-                                                <a href="#" class="title">Bottoms</a>
-                                                <a href="shop.html">Heeled sandals</a>
-                                                <a href="shop.html">Polo Short Sleeve</a>
-                                                <a href="shop.html">Flat sandals</a>
-                                                <a href="shop.html">Short Sleeve</a>
-                                                <a href="shop.html">Long Sleeve</a>
-                                            </span>
-                                            <span>
-                                                <a href="#" class="title">Jeans Pants</a>
-                                                <a href="shop.html">Polo Short Sleeve</a>
-                                                <a href="shop.html">Sleeveless</a>
-                                                <a href="shop.html">Graphic T-Shirts</a>
-                                                <a href="shop.html">Hoodies</a>
-                                                <a href="shop.html">Jackets</a>
-                                            </span>
-                                        </div>
-                                    </li>
-
-                                    <li><a href="index.php?action=sanpham">Sách tiểu thuyết<i
-                                                class="fa fa-angle-down"></i></a>
-                                        <div class="mega-menu mega-menu-2">
-                                            <span>
-                                                <a href="#" class="title">Tops</a>
-                                                <a href="shop.html">Shirts</a>
-                                                <a href="shop.html">Florals</a>
-                                                <a href="shop.html">Crochet</a>
-                                                <a href="shop.html">Stripes</a>
-                                            </span>
-                                            <span>
-                                                <a href="#" class="title">Bottoms</a>
-                                                <a href="shop.html">Shorts</a>
-                                                <a href="shop.html">Dresses</a>
-                                                <a href="shop.html">Trousers</a>
-                                                <a href="shop.html">Jeans</a>
-                                            </span>
-                                            <span>
-                                                <a href="#" class="title">Shoes</a>
-                                                <a href="shop.html">Heeled sandals</a>
-                                                <a href="shop.html">Flat sandals</a>
-                                                <a href="shop.html">Wedges</a>
-                                                <a href="shop.html">Ankle boots</a>
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li><a href="index.php?action=gioithieu">Giới thiệu<i
-                                                class="fa fa-angle-down"></i></a>
-                                        <div class="sub-menu sub-menu-2">
-                                            <ul>
-                                                <li><a href="blog.html">Giới thiệu</a></li>
-                                                <li><a href="blog-details.html">Chi tiết giới thiệu</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="index.php?action=lienhe">Liên hệ<i class="fa fa-angle-down"></i></a>
-                                    </li>
+                                    <li><a href="index.php?act=lienhe">Liên hệ</a> </li>
                                 </ul>
                             </nav>
                         </div>

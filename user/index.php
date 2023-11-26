@@ -13,8 +13,8 @@ $sach_kt=list_sach_by_dm_kt();
 
 include 'view/header.php';
 
-if (isset($_GET['action']) && ($_GET['action']) != "") {
-    $action = $_GET['action'];
+if (isset($_GET['act']) && ($_GET['act']) != "") {
+    $action = $_GET['act'];
     switch ($action) {
         case 'home':
             include 'view/home.php';
