@@ -25,7 +25,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
 
         case 'sanphamct':
-            include 'view/sanphamct.php';
+            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+                $onesp = loadone_sach($_GET['idsp']);
+                extract($onesp);
+                $sp_cung_loai = load_sanpham_cungloai($_GET['idsp'],$id_danhmuc);
+
+                include 'view/sanphamct.php';
+            }
             break;
 
         case 'taikhoankh':
