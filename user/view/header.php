@@ -109,11 +109,6 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="account-area text-end">
                             <ul>
-<<<<<<< HEAD
-                                <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
-                                <li><a href="index.php?act=dangky">Đăng ký</a></li>
-                                <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
-=======
                                 <?php if(isset($_SESSION['name'])){ ?>
                                 <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
                                 <li><a href="index.php?act=thoat">Đăng xuất</a></li>
@@ -123,7 +118,6 @@
                                 <li><a href="index.php?act=dangky">Đăng ký</a></li>
                                 <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
                                 <?php } ?>
->>>>>>> 8a7d51c70fcf24b3c3755cb65a5e4fa0a19c3abf
                             </ul>
                         </div>
                     </div>
