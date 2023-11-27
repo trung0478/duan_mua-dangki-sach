@@ -112,10 +112,6 @@
                         </li>
                         <li class="has-submenu">
                             <a href="#">
-                                <i class="fa-solid fa-gift"></i>Khuyến mại</a>
-                        </li>
-                        <li class="has-submenu">
-                            <a href="#">
                                 <i class="dripicons-copy"></i>Đơn hàng</a>
                         </li>
                         <li class="has-submenu">

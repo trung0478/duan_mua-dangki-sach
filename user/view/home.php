@@ -56,61 +56,57 @@
             foreach ($sach_noibat as $sach) {
                 extract($sach);
             ?>
-            <div class="tab-total">
-                <!-- single-product-start -->
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="index.php?act=sanphamct">
-                            <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
-                        </a>
-                        <div class="quick-view">
-                            <a class="action-view" href="index.php?act=sanphamct"
-                                data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal"
-                                title="Quick View">
-                                <i class="fa fa-search-plus"></i>
+                <div class="tab-total">
+                    <!-- single-product-start -->
+                    <div class="product-wrapper">
+                        <div class="product-img">
+                            <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
                             </a>
+                            <div class="quick-view">
+                                <a class="action-view" href="index.php?act=sanphamct&idsp=<?php echo $p_id; ?>" data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal" title="Quick View">
+                                    <i class="fa fa-search-plus"></i>
+                                </a>
+                            </div>
+                            <div class="product-flag">
+                                <ul>
+                                    <li><span class="sale">Mới</span> <br></li>
+                                    <li><span class="discount-percentage">-5%</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="product-flag">
-                            <ul>
-                                <li><span class="sale">Mới</span> <br></li>
-                                <li><span class="discount-percentage">-5%</span></li>
-                            </ul>
+                        <div class="product-details text-center">
+                            <div class="product-rating">
+                                <ul>
+                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                </ul>
+                            </div>
+                            <h4><a href="index.php?act=sanphamct&idsp=<?php echo $p_id; ?>"><?php echo $ten_sach ?></a></h4>
+                            <div class="product-price">
+                                <ul>
+                                    <li><?php echo $gia ?> đ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-link">
+                            <div class="product-button">
+                                <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                            <div class="add-to-link">
+                                <ul>
+                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-details text-center">
-                        <div class="product-rating">
-                            <ul>
-                                <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                        </div>
-                        <h4><a href="index.php?act=sanphamct"><?php echo $ten_sach ?></a></h4>
-                        <div class="product-price">
-                            <ul>
-                                <li><?php echo $gia ?> đ</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product-link">
-                        <div class="product-button">
-                            <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i
-                                    class="fa fa-shopping-cart"></i>Thêm vào giỏ
-                                hàng</a>
-                        </div>
-                        <div class="add-to-link">
-                            <ul>
-                                <li><a href="product-details.html" title="Details"><i
-                                            class="fa fa-external-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- single-product-end -->
-            </div>
+                    <!-- single-product-end -->
+                </div>
             <?php } ?>
         </div>
     </div>
@@ -122,8 +118,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="banner-img-2">
-                    <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/banner/5.jpg"
-                            alt="banner" /></a>
+                    <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/banner/5.jpg" alt="banner" /></a>
                     <div class="banner-text">
                         <h3>G. Meyer sách & Nhà thám tử thông minh</h3>
                         <h2>Sale up to 30% off</h2>
@@ -159,8 +154,7 @@
                             </div>
                         </div>
                         <div class="banner-img-3">
-                            <a href="index.php?act=sanphamct"><img
-                                    src="https://htmldemo.net/koparion/koparion/img/product/5.jpg" alt="banner" /></a>
+                            <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/product/5.jpg" alt="banner" /></a>
                         </div>
                     </div>
                 </div>
@@ -181,20 +175,24 @@
                         }
                     ?>
 
-                    <div class="single-bestseller <?php echo $mr; ?>">
-                        <div class="bestseller-img">
-                            <a href="index.php?act=sanphamct"><img src="upload/<?php echo $anh ?>" alt="book" /></a>
-                        </div>
-                        <div class="bestseller-text text-center">
-                            <h3> <a href="index.php?act=sanphamct"><?php echo $ten_sach ?></a></h3>
-                            <div class="price">
-                                <ul>
-                                    <li><span class="Mới-price"><?php echo $gia_khuyenmai ?> đ</span></li>
-                                    <li><span class="old-price"><?php echo $gia ?> đ</span></li>
-                                </ul>
+                        <div class="single-bestseller <?php echo $mr; ?>">
+                            <div class="bestseller-img">
+                                <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                    <img src="upload/<?php echo $anh ?>" alt="book" /></a>
+                            </div>
+                            <div class="bestseller-text text-center">
+                                <h3>
+                                    <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                        <?php echo $ten_sach ?></a>
+                                </h3>
+                                <div class="price">
+                                    <ul>
+                                        <li><span class="Mới-price"><?php echo $gia_khuyenmai ?> đ</span></li>
+                                        <li><span class="old-price"><?php echo $gia ?> đ</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     <?php
                         if ($i % 2 == 1 || $i == count($sach_khuyenmai) - 1) {
@@ -244,58 +242,57 @@
                     foreach ($sach_new as $sach) {
                         extract($sach);
                     ?>
-                    <!-- single-product-start -->
-                    <div class="product-wrapper">
-                        <div class="product-img ">
-                            <a href="index.php?sanphamct">
-                                <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
-                            </a>
-                            <div class="quick-view">
-                                <a class="action-view" href="index.php?act=sanphamct"
-                                    data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal"
-                                    title="Quick View">
-                                    <i class="fa fa-search-plus"></i>
+                        <!-- single-product-start -->
+                        <div class="product-wrapper">
+                            <div class="product-img ">
+                                <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                    <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
                                 </a>
+                                <div class="quick-view">
+                                    <a class="action-view" href="index.php?act=sanphamct" data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal" title="Quick View">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="product-flag">
+                                    <ul>
+                                        <li><span class="sale">Mới</span> <br></li>
+                                        <li><span class="discount-percentage">-5%</span></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="product-flag">
-                                <ul>
-                                    <li><span class="sale">Mới</span> <br></li>
-                                    <li><span class="discount-percentage">-5%</span></li>
-                                </ul>
+                            <div class="product-details text-center">
+                                <div class="product-rating">
+                                    <ul>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <h4>
+                                    <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                        <?php echo $ten_sach ?></a>
+                                </h4>
+                                <div class="product-price">
+                                    <ul>
+                                        <li><?php echo $gia  ?> đ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-link">
+                                <div class="product-button">
+                                    <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>Thêm
+                                        vào giỏ
+                                        hàng</a>
+                                </div>
+                                <div class="add-to-link">
+                                    <ul>
+                                        <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-details text-center">
-                            <div class="product-rating">
-                                <ul>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <h4><a href="index.php?sanphamct"><?php echo $ten_sach ?></a></h4>
-                            <div class="product-price">
-                                <ul>
-                                    <li><?php echo $gia  ?> đ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product-link">
-                            <div class="product-button">
-                                <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i
-                                        class="fa fa-shopping-cart"></i>Thêm
-                                    vào giỏ
-                                    hàng</a>
-                            </div>
-                            <div class="add-to-link">
-                                <ul>
-                                    <li><a href="product-details.html" title="Details"><i
-                                                class="fa fa-external-link"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
 
@@ -307,58 +304,57 @@
                     foreach ($sach_new as $sach) {
                         extract($sach);
                     ?>
-                    <!-- single-product-start -->
-                    <div class="product-wrapper">
-                        <div class="product-img ">
-                            <a href="index.php?act=sanphamct">
-                                <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
-                            </a>
-                            <div class="quick-view">
-                                <a class="action-view" href="index.php?act=sanphamct"
-                                    data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal"
-                                    title="Quick View">
-                                    <i class="fa fa-search-plus"></i>
+                        <!-- single-product-start -->
+                        <div class="product-wrapper">
+                            <div class="product-img ">
+                                <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                    <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
                                 </a>
+                                <div class="quick-view">
+                                    <a class="action-view" href="index.php?act=sanphamct" data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal" title="Quick View">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="product-flag">
+                                    <ul>
+                                        <li><span class="sale">Mới</span> <br></li>
+                                        <li><span class="discount-percentage">-5%</span></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="product-flag">
-                                <ul>
-                                    <li><span class="sale">Mới</span> <br></li>
-                                    <li><span class="discount-percentage">-5%</span></li>
-                                </ul>
+                            <div class="product-details text-center">
+                                <div class="product-rating">
+                                    <ul>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <h4>
+                                    <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                        <?php echo $ten_sach ?></a>
+                                </h4>
+                                <div class="product-price">
+                                    <ul>
+                                        <li><?php echo $gia  ?> đ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-link">
+                                <div class="product-button">
+                                    <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>Thêm
+                                        vào giỏ
+                                        hàng</a>
+                                </div>
+                                <div class="add-to-link">
+                                    <ul>
+                                        <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-details text-center">
-                            <div class="product-rating">
-                                <ul>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <h4><a href="index.php?act=sanphamct"><?php echo $ten_sach ?></a></h4>
-                            <div class="product-price">
-                                <ul>
-                                    <li><?php echo $gia  ?> đ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product-link">
-                            <div class="product-button">
-                                <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i
-                                        class="fa fa-shopping-cart"></i>Thêm
-                                    vào giỏ
-                                    hàng</a>
-                            </div>
-                            <div class="add-to-link">
-                                <ul>
-                                    <li><a href="product-details.html" title="Details"><i
-                                                class="fa fa-external-link"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -369,58 +365,54 @@
                     foreach ($sach_new as $sach) {
                         extract($sach);
                     ?>
-                    <!-- single-product-start -->
-                    <div class="product-wrapper">
-                        <div class="product-img ">
-                            <a href="index.php?act=sanphamct">
-                                <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
-                            </a>
-                            <div class="quick-view">
-                                <a class="action-view" href="index.php?act=sanphamct"
-                                    data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal"
-                                    title="Quick View">
-                                    <i class="fa fa-search-plus"></i>
+                        <!-- single-product-start -->
+                        <div class="product-wrapper">
+                            <div class="product-img ">
+                                <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
+                                    <img src="upload/<?php echo $anh ?>" alt="book" class="primary" />
                                 </a>
+                                <div class="quick-view">
+                                    <a class="action-view" href="index.php?act=sanphamct" data-bs-target="index.php?act=sanphamctproductModal" data-bs-toggle="modal" title="Quick View">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="product-flag">
+                                    <ul>
+                                        <li><span class="sale">Mới</span> <br></li>
+                                        <li><span class="discount-percentage">-5%</span></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="product-flag">
-                                <ul>
-                                    <li><span class="sale">Mới</span> <br></li>
-                                    <li><span class="discount-percentage">-5%</span></li>
-                                </ul>
+                            <div class="product-details text-center">
+                                <div class="product-rating">
+                                    <ul>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <h4><a href="index.php?act=sanphamct"><?php echo $ten_sach ?></a></h4>
+                                <div class="product-price">
+                                    <ul>
+                                        <li><?php echo $gia  ?> đ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-link">
+                                <div class="product-button">
+                                    <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>Thêm
+                                        vào giỏ
+                                        hàng</a>
+                                </div>
+                                <div class="add-to-link">
+                                    <ul>
+                                        <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-details text-center">
-                            <div class="product-rating">
-                                <ul>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="index.php?act=sanphamct"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <h4><a href="index.php?act=sanphamct"><?php echo $ten_sach ?></a></h4>
-                            <div class="product-price">
-                                <ul>
-                                    <li><?php echo $gia  ?> đ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="product-link">
-                            <div class="product-button">
-                                <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i
-                                        class="fa fa-shopping-cart"></i>Thêm
-                                    vào giỏ
-                                    hàng</a>
-                            </div>
-                            <div class="add-to-link">
-                                <ul>
-                                    <li><a href="product-details.html" title="Details"><i
-                                                class="fa fa-external-link"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -437,8 +429,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="single-banner mb-30">
                     <div class="banner-img">
-                        <a href="index.php?act=sanphamct"><img
-                                src="https://htmldemo.net/koparion/koparion/img/banner/1.png" alt="banner" /></a>
+                        <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>"><img src="https://htmldemo.net/koparion/koparion/img/banner/1.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Free shipping</h4>
@@ -449,8 +440,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="single-banner mb-30">
                     <div class="banner-img">
-                        <a href="index.php?act=sanphamct"><img
-                                src="https://htmldemo.net/koparion/koparion/img/banner/2.png" alt="banner" /></a>
+                        <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/banner/2.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Đảm bảo hoàn tiền</h4>
@@ -461,8 +451,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="single-banner mb-30">
                     <div class="banner-img">
-                        <a href="index.php?act=sanphamct"><img
-                                src="https://htmldemo.net/koparion/koparion/img/banner/3.png" alt="banner" /></a>
+                        <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/banner/3.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Thanh toán khi giao hàng</h4>
@@ -473,8 +462,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="single-banner mb-30">
                     <div class="banner-img">
-                        <a href="index.php?act=sanphamct"><img
-                                src="https://htmldemo.net/koparion/koparion/img/banner/4.png" alt="banner" /></a>
+                        <a href="index.php?act=sanphamct"><img src="https://htmldemo.net/koparion/koparion/img/banner/4.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Trợ giúp & Hỗ trợ</h4>

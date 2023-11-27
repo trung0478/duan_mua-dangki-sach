@@ -9,7 +9,7 @@ function list_sach()
 {
     $sql = "SELECT sach.*, trangthaisach.ten_trangthai, danhmuc.tendanhmuc FROM sach
     INNER JOIN trangthaisach ON sach.id_trangthai = trangthaisach.id_trangthai
-    INNER JOIN danhmuc ON sach.id_danhmuc = danhmuc.id_danhmuc";
+    INNER JOIN danhmuc ON sach.id_danhmuc = danhmuc.id_danhmuc order by id_sach desc";
     $result = pdo_query_all($sql);
     return $result;
 }
