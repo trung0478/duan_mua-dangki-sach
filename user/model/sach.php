@@ -32,4 +32,18 @@ function list_sach_by_dm_kt()
     $result = pdo_query_all($sql);
     return $result;
 }
+
+
+function loadone_sach($id)
+{
+    $sql = "select * from sach where id_sach=" . $id;
+    $sp = pdo_query_one($sql);
+    return $sp;
+}
+function load_sanpham_cungloai($id,$iddm)
+{
+    $sql = "select * from sach where id_danhmuc=".$iddm." AND id_sach <> ".$id;
+    $listsanpham = pdo_query_all($sql);
+    return $listsanpham;
+}
 ?>

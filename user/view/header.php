@@ -41,7 +41,30 @@
         width: 100%;
         height: 220px;
     }
+
+    /* đăng ký đăng nhập */
+    .login-form .single-login input[type="submit"] {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: 1px solid #eceff8;
+        display: inline-block;
+        padding: 10px 43px;
+        color: #333;
+        text-transform: capitalize;
+        text-decoration: none;
+        float: left;
+        transition: .3s;
+        font-family: 'Rufina',
+            serif;
+        font-weight: 400;
+    }
+
+    .login-form .single-login input[type="submit"]:hover {
+        background: #F07C29;
+        color: #fff;
+        border: 1px solid #F07C29;
+    }
     </style>
+
 </head>
 
 <body class="home-2">
@@ -86,9 +109,21 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="account-area text-end">
                             <ul>
+<<<<<<< HEAD
                                 <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
                                 <li><a href="index.php?act=dangky">Đăng ký</a></li>
                                 <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+=======
+                                <?php if(isset($_SESSION['name'])){ ?>
+                                <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
+                                <li><a href="index.php?act=thoat">Đăng xuất</a></li>
+
+                                <?php }else{      
+                                 ?>
+                                <li><a href="index.php?act=dangky">Đăng ký</a></li>
+                                <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+                                <?php } ?>
+>>>>>>> 8a7d51c70fcf24b3c3755cb65a5e4fa0a19c3abf
                             </ul>
                         </div>
                     </div>
