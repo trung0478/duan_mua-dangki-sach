@@ -4,7 +4,11 @@ include "config/connectdb.php";
 include "user/model/sach.php";
 include "user/model/danhmuc.php";
 include "user/model/taikhoan.php";
+include "user/model/giohang.php";
 
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
 
 $sach_noibat = load_sach_noibat();
 $sach_new = load_sach_new();
@@ -50,8 +54,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     $_SESSION['name'] = $checkuser;
                     // header('location:index.php');
 ?>
-<meta http-equiv="refresh" content="0;url=index.php">
-<?php
+                    <meta http-equiv="refresh" content="0;url=index.php">
+            <?php
                     exit; // Kết thúc kịch bản sau khi chuyển hướng
                 } else {
                     echo '<script>document.querySelector(".thongbao").innerText = "Mật khẩu sai rồi !";</script>';                        // $thongbao = "Tài khoản hoặc mật khẩu không chính xác !";
@@ -59,15 +63,15 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include 'view/taikhoan/dangnhap.php';
             break;
-            case 'thoat':
-                session_unset();
-                // header('location:index.php');
-                //    include_once "view/gioithieu.php";
-                ?>
-<meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
-<?php
-                break;
-    
+        case 'thoat':
+            session_unset();
+            // header('location:index.php');
+            //    include_once "view/gioithieu.php";
+            ?>
+            <meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
+            <?php
+            break;
+
 
         case 'dangky':
             if (isset($_POST['dangky']) && $_POST['dangky']) {
@@ -81,8 +85,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     insert_taikhoan($email, $user, $pass);
                     // cập nhật lại session user mới 
                     echo '<script>document.querySelector(".thongbao").innerText = "Đăng ký thành công :)";</script>';
-                    ?>
-<meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
+            ?>
+                    <meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
 <?php                } else {
                     echo '<script>document.querySelector(".thongbao").innerText = "Mật khẩu không khớp :)";</script>';
                 }
@@ -101,11 +105,37 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
 
         case 'giohang':
+            if (!empty($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+
+                // mảng chứa id sản phẩm
+                $arr_idpro = array_column($cart, 'id');
+
+                // chuyển mảng thành chuỗi
+                $list_idpro = implode(',', $arr_idpro);
+
+                $list_cart = load_cart($list_idpro);
+            }
             include 'view/giohang/giohang.php';
+            break;
+        
+        case 'empty_cart':
+            include 'view/giohang/emptyCart.php';
+            break;
+
+        case 'delete_cart':
+            if (isset($_GET['idcart'])) {
+                array_splice($_SESSION['cart'],$_GET['idcart'],1);
+            }
+            if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+                echo "<script> window.location.href='index.php?act=giohang';</script>";
+            } else {
+                echo "<script> window.location.href='index.php?act=empty_cart';</script>";
+            }
             break;
 
         case 'thanhtoan':
-            include 'view/giohang/thanhtoan.php';
+            include 'view/thanhtoan/thanhtoan.php';
             break;
 
         case 'gioithieu':

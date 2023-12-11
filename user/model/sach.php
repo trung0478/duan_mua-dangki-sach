@@ -33,7 +33,6 @@ function list_sach_by_dm_kt()
     return $result;
 }
 
-
 function loadone_sach($id)
 {
     $sql = "select * from sach where id_sach=" . $id;

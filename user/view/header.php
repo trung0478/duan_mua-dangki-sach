@@ -146,8 +146,8 @@
                     <div class="col-lg-3 col-md-3 col-12">
                         <div class="my-cart">
                             <ul>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
-                                    <span>2</span>
+                                <li><a href="?act=giohang"><i class="fa fa-shopping-cart"></i>Giỏ Hàng</a>
+                                    <span id="quantitycart"> <?= (!empty($_SESSION['cart']))?count($_SESSION['cart']):"0"; ?> </span>
                                     <div class="mini-cart-sub">
                                         <div class="cart-product">
                                             <div class="single-cart">

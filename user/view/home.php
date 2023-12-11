@@ -94,7 +94,7 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a href="index.php?act=sanphamct" title="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
+                                <a  data-id=<?= $id_sach ?> title="Thêm vào giỏ hàng" onclick="addToCart(<?= $id_sach ?>, '<?= $ten_sach ?>', <?= $gia ?>, '<?= $anh ?>' )"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ
                                     hàng</a>
                             </div>
                             <div class="add-to-link">
@@ -516,3 +516,28 @@
     </div>
 </div>
 <!-- social-group-area-end -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let quantitycart = document.getElementById('quantitycart');
+    function addToCart(idpro, namepro, pricepro, imgpro) {
+        //    console.log(idpro, namepro, pricepro, imgpro);
+        $.ajax({
+            type: 'POST',
+            url: 'user/view/giohang/themgiohang.php',
+            data: {
+                id: idpro,
+                name: namepro,
+                price: pricepro,
+                img: imgpro
+            },
+            success: function(respone) {
+                quantitycart.innerText=respone;
+                alert('Thêm thành công vào giỏ hàng!!!');
+            },
+            error: function(error){
+                console.log(error)
+            }
+        })
+    }
+</script>
