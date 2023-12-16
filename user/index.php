@@ -4,6 +4,7 @@ include "config/connectdb.php";
 include "user/model/sach.php";
 include "user/model/danhmuc.php";
 include "user/model/taikhoan.php";
+include "user/model/binhluan.php";
 
 
 $sach_noibat = load_sach_noibat();
@@ -31,6 +32,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onesp = loadone_sach($_GET['idsp']);
                 extract($onesp);
                 $sp_cung_loai = load_sanpham_cungloai($_GET['idsp'], $id_danhmuc);
+                
+                $binhluan = loadall_binhluan1($_GET['idsp']);
 
                 include 'view/sanphamct.php';
             }
@@ -42,7 +45,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
 
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && $_POST['dangnhap']) {
-                $user = $_POST['name'];
+                $user = $_POST['email'];
                 $pass = $_POST['pass'];
                 $checkuser = checkuser($user, $pass);
                 $thongbao = "";

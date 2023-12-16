@@ -38,7 +38,8 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-4">
                                 <div class="myaccount-tab-menu nav" role="tablist">
-                                    <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
+                                    <a href="#dashboad" class="active" data-bs-toggle="tab"><i
+                                            class="fa fa-dashboard"></i>
                                         Bảng điều khiển</a>
                                     <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
                                         Đơn đặt hàng</a>
@@ -59,15 +60,14 @@
                                     <!-- Single Tab Content Start -->
                                     <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                         <div class="myaccount-content">
-                                            <h5>Dashboard</h5>
+                                            <h5>bảng điều khiển</h5>
                                             <div class="welcome">
-                                                <p>Hello, <strong>Erik Jhonson</strong> (If Not <strong>Jhonson
-                                                        !</strong><a href="login-register.html" class="logout">
-                                                        Logout</a>)</p>
+                                                <p>Chào mừng bạn !</p>
                                             </div>
-                                            <p class="mb-0">From your account dashboard. you can easily check &
-                                                view your recent orders, manage your shipping and billing addresses
-                                                and edit your password and account details.</p>
+                                            <p class="mb-0">Từ bảng điều khiển tài khoản của bạn. bạn có thể dễ dàng
+                                                kiểm tra và xem các đơn đặt hàng gần đây của mình, quản lý địa chỉ giao
+                                                hàng và thanh toán cũng như chỉnh sửa chi tiết mật khẩu và tài khoản của
+                                                mình.</p>
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
@@ -133,30 +133,24 @@
 
 
                                     <!-- Single Tab Content Start -->
+                                    <?php
+                                     if (isset($_SESSION['name']) && (is_array($_SESSION['name']))) {
+                                        extract($_SESSION['name']);
+                                    }
+                                    ?>
                                     <div class="tab-pane fade" id="account-info" role="tabpanel">
                                         <div class="myaccount-content">
-                                            <h5>Account Details</h5>
+                                            <h5>Chi tiết tài khoản</h5>
                                             <div class="account-details-form">
                                                 <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="single-input-item">
-                                                                <label for="first-name" class="required">First
-                                                                    Name</label>
-                                                                <input type="text" id="first-name" placeholder="First Name" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="single-input-item">
-                                                                <label for="last-name" class="required">Last
-                                                                    Name</label>
-                                                                <input type="text" id="last-name" placeholder="Last Name" />
-                                                            </div>
-                                                        </div>
+                                                    <div class="single-input-item">
+                                                        <label for="display-name" class="required">Tên tài khoản</label>
+                                                        <input type="text" id="display-name" value="<?= $ho_ten ?>" />
                                                     </div>
                                                     <div class="single-input-item">
-                                                        <label for="display-name" class="required">Display Name</label>
-                                                        <input type="text" id="display-name" placeholder="Display Name" />
+                                                        <label for="display-name" class="required">Email</label>
+                                                        <input type="text" id="display-name" value="<?= $email ?>"
+                                                            readonly />
                                                     </div>
                                                     <div class="single-input-item">
                                                         <label for="email" class="required">Email Addres</label>
@@ -167,21 +161,24 @@
                                                         <div class="single-input-item">
                                                             <label for="current-pwd" class="required">Current
                                                                 Password</label>
-                                                            <input type="password" id="current-pwd" placeholder="Current Password" />
+                                                            <input type="password" id="current-pwd"
+                                                                placeholder="Current Password" />
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item">
                                                                     <label for="new-pwd" class="required">New
                                                                         Password</label>
-                                                                    <input type="password" id="new-pwd" placeholder="New Password" />
+                                                                    <input type="password" id="new-pwd"
+                                                                        placeholder="New Password" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6">
                                                                 <div class="single-input-item">
                                                                     <label for="confirm-pwd" class="required">Confirm
                                                                         Password</label>
-                                                                    <input type="password" id="confirm-pwd" placeholder="Confirm Password" />
+                                                                    <input type="password" id="confirm-pwd"
+                                                                        placeholder="Confirm Password" />
                                                                 </div>
                                                             </div>
                                                         </div>

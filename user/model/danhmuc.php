@@ -1,4 +1,4 @@
-<?php
+    <?php
 function list_danhmuc()
 {
     $sql = "select * from danhmuc";

@@ -21,7 +21,7 @@
                 <!-- product-main-area-start -->
                 <div class="product-main-area">
                     <div class="row">
-                        <?php extract($onesp);?>
+                        <?php extract($onesp); ?>
 
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="flexslider">
@@ -71,7 +71,6 @@
                                         <a href="#"><i class="fa fa-pie-chart"></i></a>
                                         <a href="#"><i class="fa fa-envelope-o"></i></a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -82,87 +81,41 @@
                 <div class="product-info-area mt-80">
                     <!-- Nav tabs -->
                     <ul class="nav">
-                        <li><a class="active" href="#Details" data-bs-toggle="tab">Details</a></li>
-                        <li><a href="#Reviews" data-bs-toggle="tab">Reviews 3</a></li>
+                        <li><a class="active" href="#Details" data-bs-toggle="tab">Chi tiết</a></li>
+                        <li><a href="#Reviews" data-bs-toggle="tab">Bình luận</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="Details">
                             <div class="valu">
                                 <p><?php echo $mota ?>
                                 </p>
-
                             </div>
                         </div>
                         <div class="tab-pane fade" id="Reviews">
-                            <div class="valu valu-2">
-                                <div class="section-title mb-60 mt-60">
-                                    <h2>Bình luận của người khác</h2>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <div class="review-title">
-                                            <h3>themes</h3>
-                                        </div>
-                                        <div class="review-left">
-                                            <div class="review-rating">
-                                                <span>Price</span>
-                                                <div class="rating-result">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="review-rating">
-                                                <span>Value</span>
-                                                <div class="rating-result">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="review-rating">
-                                                <span>Quality</span>
-                                                <div class="rating-result">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="review-right">
-                                            <div class="review-content">
-                                                <h4>themes </h4>
-                                            </div>
-                                            <div class="review-details">
-                                                <p class="review-author">Review by<a href="#">plaza</a></p>
-                                                <p class="review-date">Posted on <span>12/9/16</span></p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="review-add">
-                                    <h3>Bình luận của bạn:</h3>
-                                </div>
-
-                                <div class="review-form">
-
-                                    <div class="single-form">
-                                        <label>Bình luận <sup>*</sup></label>
-                                        <form action="#">
-                                            <textarea name="massage" cols="10" rows="4"></textarea>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="review-form-button">
-                                    <a href="#">Gửi bình luận</a>
+                            <?php
+                            if (isset($_SESSION['name'])) {
+                            ?>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                            <script>
+                            $(document).ready(function() {
+                                $("#binhluan").load("user/view/binhluan/binhluanform.php", {
+                                    idpro: <?= $id_sach ?>
+                                });
+                            });
+                            </script>
+                            <div class="mb" id="binhluan">
+                            </div>
+                            <?php } else { ?>
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                    aria-label="Danger:">
+                                    <use xlink:href="#exclamation-triangle-fill" />
+                                </svg>
+                                <div style="margin-top: 20px;">
+                                    Vui lòng đăng nhập để bình luận sản phẩm này
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -176,10 +129,10 @@
                         <!-- single-product-start -->
                         <?php
                         foreach ($sp_cung_loai as $sp) {
-                            extract($sp);?>
+                            extract($sp); ?>
                         <div class="product-wrapper">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>">
                                     <img style="width:80%;" src="upload/<?php echo $anh ?>" alt="book"
                                         class="primary" />
                                 </a>
@@ -206,7 +159,9 @@
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                     </ul>
                                 </div>
-                                <h4><a href="#"><?php echo $ten_sach ?></a></h4>
+                                <h4><a
+                                        href="index.php?act=sanphamct&idsp=<?php echo $id_sach; ?>"><?php echo $ten_sach ?></a>
+                                </h4>
                                 <div class="product-price">
                                     <ul>
                                         <li><?php echo $gia ?></li>

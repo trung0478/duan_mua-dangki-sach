@@ -29,8 +29,8 @@
                 <div class="login-form">
                     <form action="index.php?act=dangnhap" method="post">
                         <div class="single-login">
-                            <label>Tên đăng nhập<span>*</span></label>
-                            <input type="text" name="name" />
+                            <label>Email<span>*</span></label>
+                            <input type="text" name="email" />
                         </div>
                         <div class="single-login">
                             <label>Mật khẩu <span>*</span></label>

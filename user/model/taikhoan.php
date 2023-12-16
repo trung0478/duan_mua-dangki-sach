@@ -7,7 +7,7 @@ function insert_taikhoan($email, $user, $pass)
 }
 function checkuser($user, $pass)
 {
-    $sql = "SELECT * FROM taikhoan WHERE ho_ten = '" . $user . "' AND pass = '" . $pass . "'";
+    $sql = "SELECT * FROM taikhoan WHERE email = '" . $user . "' AND pass = '" . $pass . "'";
     $sp = pdo_query_one($sql);
     return $sp;
 }

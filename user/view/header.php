@@ -81,36 +81,35 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="language-area">
-                            <ul>
-                                <li><img style="width: 22px;" src="img/vietnam.png" alt="flag" /><a href="#">Việt Nam<i
-                                            class="fa fa-angle-down"></i></a>
-                                    <div class="header-sub">
-                                        <ul>
-                                            <li><a href="#"><img
-                                                        src="https://htmldemo.net/koparion/koparion/img/flag/2.jpg"
-                                                        alt="flag" />france</a></li>
-                                            <li><a href="#"><img
-                                                        src="https://htmldemo.net/koparion/koparion/img/flag/1.jpg"
-                                                        alt="flag" />English</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a href="#">Việt Nam<i class="fa fa-angle-down"></i></a>
-                                    <div class="header-sub dolor">
-                                        <ul>
-                                            <li><a href="#">Việt nam</a></li>
-                                            <li><a href="#">USD $</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="account-area text-end">
                             <ul>
                                 <?php if(isset($_SESSION['name'])){ ?>
-                                <li><a href="index.php?act=taikhoankh">Tài Khoản của tôi</a></li>
+                                <li><a href="index.php?act=taikhoankh">
+                                        <?php
+                                    if (isset($_SESSION['name'])) {
+                                        extract($_SESSION['name']);
+                                        if (!empty($anh)) {
+                                            $hinhpath = "upload/" . $anh;
+                                            if (is_file($hinhpath)) {
+                                                $hinh = "<img src='" . $hinhpath . "' style='height: 40px; width: 40px; border-radius: 50%;'>";
+                                            } else {
+                                                $hinh = "No photo";
+                                            }
+                                        } else {
+                                            $hinh = "<img src='upload/avata_null.jpg' alt='' ' style='height: 40px; width: 40px; border-radius: 50%;'>";
+                                        }
+                                    ?>
+                                        <?php echo $hinh ?>
+                                        <?php
+                                    } else {
+                                    ?>
+                                        <i class="icon-user"></i>
+                                        <?php } ?>
+                                    </a></li>
                                 <li><a href="index.php?act=thoat">Đăng xuất</a></li>
 
                                 <?php }else{      
