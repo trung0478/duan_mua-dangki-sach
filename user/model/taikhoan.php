@@ -11,6 +11,11 @@ function checkuser($user, $pass)
     $sp = pdo_query_one($sql);
     return $sp;
 }
+function getOneAccount($id_taikhoan) {
+    $sql = "SELECT * FROM taikhoan WHERE id_taikhoan = $id_taikhoan";
+    $sp = pdo_query_one($sql);
+    return $sp;
+}
 
 
 function sendMail($email)

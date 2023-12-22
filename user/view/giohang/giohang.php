@@ -34,7 +34,7 @@ if (empty($list_cart)) {
 }else{
 ?>
 
-<div class="cart-main-area mb-70">
+<div id="tableCart" class="cart-main-area mb-70">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -51,7 +51,7 @@ if (empty($list_cart)) {
 									<th class="product-remove">Remove</th>
 								</tr>
 							</thead>
-							<tbody id="tableCart">
+							<tbody>
 								<?php
 									$sum = 0;
 									$quantity = 0;
@@ -96,61 +96,39 @@ if (empty($list_cart)) {
 			<div class="col-lg-8 col-md-6 col-12">
 				<div class="buttons-cart mb-30">
 					<ul>
-						<li><a href="#">Update Cart</a></li>
-						<li><a href="#">Continue Shopping</a></li>
+						<li><a href="?act=home">Tiếp tục mua sắm</a></li>
 					</ul>
-				</div>
-				<div class="coupon">
-					<h3>Coupon</h3>
-					<p>Enter your coupon code if you have one.</p>
-					<form action="#">
-						<input type="text" placeholder="Coupon code">
-						<a href="#">Apply Coupon</a>
-					</form>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="cart_totals">
-					<h2>Cart Totals</h2>
+					<h2>Tổng số giỏ hàng</h2>
 					<table>
 						<tbody>
 							<tr class="cart-subtotal">
-								<th>Subtotal</th>
+								<th>Tổng phụ</th>
 								<td>
-									<span class="amount">£215.00</span>
+									<?= number_format($sum,'0','.','.')  ?><u>đ</u>
 								</td>
 							</tr>
 							<tr class="shipping">
-								<th>Shipping</th>
+								<th>Vận chuyển</th>
 								<td>
-									<ul id="shipping_method">
-										<li>
-											<input type="radio">
-											<label>
-												Flat Rate:
-												<span class="amount">£7.00</span>
-											</label>
-										</li>
-										<li>
-											<input type="radio">
-											<label> Free Shipping </label>
-										</li>
-									</ul>
-									<a href="#">Calculate Shipping</a>
+									<?= number_format(30000,'0','.','.')  ?><u>đ</u>
 								</td>
 							</tr>
 							<tr class="order-total">
-								<th>Total</th>
+								<th>Tổng cộng</th>
 								<td>
 									<strong>
-										<span class="amount">£215.00</span>
+										<?= number_format($sum+30000,'0','.','.')  ?><u>đ</u>
 									</strong>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="wc-proceed-to-checkout">
-						<a href="index.php?action=thanhtoan">Proceed to Checkout</a>
+						<a href="index.php?act=thongtin_thanhtoan">Tiến hành thanh toán</a>
 					</div>
 				</div>
 			</div>
