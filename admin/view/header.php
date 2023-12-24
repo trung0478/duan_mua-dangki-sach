@@ -39,7 +39,9 @@
                     <ul class="list-unstyled float-right mb-0">
                         <!-- language-->
                         <li class="dropdown notification-list hide-phone">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt="">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">English <img
+                                    src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right language-switch">
                                 <a class="dropdown-item" href="#">
@@ -51,7 +53,8 @@
 
                         <!-- User-->
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown"
+                                href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown border-0">
@@ -65,8 +68,8 @@
                                     <i class="fa-solid fa-share"></i> Đăng nhập </a>
                                 <a class="dropdown-item" href="admin/register.php">
                                     <i class="fa-solid fa-user-plus"></i> Đăng ký </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fa-solid fa-right-from-bracket"></i> Logout </a>
+                                <a class="dropdown-item" href="../../user/index.php?act=thoat">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất </a>
                             </div>
                         </li>
                         <li class="menu-item">

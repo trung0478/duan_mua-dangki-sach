@@ -24,8 +24,10 @@
                 </div>
             </div>
             <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
-                <p class="thongbao" style="color: red;">
-                </p>
+                <?php
+                if ($error_message != '') {
+                    echo '<div class="alert alert-primary thongbao">' . $error_message . '</div>';
+                  } ?>
                 <div class="login-form">
                     <form action="index.php?act=dangnhap" method="post">
                         <div class="single-login">
@@ -34,7 +36,7 @@
                         </div>
                         <div class="single-login">
                             <label>Mật khẩu <span>*</span></label>
-                            <input type="text" name="pass" />
+                            <input type="password" name="pass" />
                         </div>
                         <div class="single-login single-login-2">
                             <input type="submit" name="dangnhap" value="Đăng nhập">
@@ -48,24 +50,3 @@
 </div>
 <!-- user-login-area-end -->
 <!-- footer-area-start -->
-<footer>
-    <!-- footer-top-start -->
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-top-menu bb-2">
-                        <nav>
-                            <ul>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">Enable Cookies</a></li>
-                                <li><a href="#">Privacy and Cookie Policy</a></li>
-                                <li><a href="#">contact us</a></li>
-                                <li><a href="#">blog</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>

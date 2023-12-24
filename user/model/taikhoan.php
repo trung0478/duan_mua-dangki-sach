@@ -1,8 +1,8 @@
 <?php 
-function insert_taikhoan($email, $user, $pass)
+function insert_taikhoan($email, $user, $hashedPassword,$vaitro)
 {
     // $birth = date('Y/d/m');
-    $sql = "insert into taikhoan(email,ho_ten,pass) values('$email','$user','$pass')";
+    $sql = "insert into taikhoan(email,ho_ten,pass,vaitro) values('$email','$user','$hashedPassword','$vaitro')";
     pdo_execute($sql);
 }
 function checkuser($user, $pass)
@@ -12,6 +12,11 @@ function checkuser($user, $pass)
     return $sp;
 }
 
+function get_info_user($email) {
+    $sql = "select * from taikhoan where email='$email'";
+    $user = pdo_query_one($sql);
+    return  $user;
+}
 
 function sendMail($email)
 {

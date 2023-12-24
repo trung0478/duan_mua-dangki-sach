@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config/connectdb.php';
 include 'model/danhmuc.php';
 include 'model/sach.php';

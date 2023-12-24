@@ -32,7 +32,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onesp = loadone_sach($_GET['idsp']);
                 extract($onesp);
                 $sp_cung_loai = load_sanpham_cungloai($_GET['idsp'], $id_danhmuc);
-                
+
                 $binhluan = loadall_binhluan1($_GET['idsp']);
 
                 include 'view/sanphamct.php';
@@ -44,52 +44,69 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
 
         case 'dangnhap':
+            $error_message = ''; // Khởi tạo biến $error_message trước khi sử dụng
             if (isset($_POST['dangnhap']) && $_POST['dangnhap']) {
-                $user = $_POST['email'];
-                $pass = $_POST['pass'];
-                $checkuser = checkuser($user, $pass);
-                $thongbao = "";
-                if (is_array($checkuser)) {
-                    $_SESSION['name'] = $checkuser;
-                    // header('location:index.php');
-?>
-<meta http-equiv="refresh" content="0;url=index.php">
-<?php
-                    exit; // Kết thúc kịch bản sau khi chuyển hướng
+                if (empty($_POST['email']) || empty($_POST['pass'])) {
+                    $error_message = 'Email và Mật khẩu không được để trống <br>';
                 } else {
-                    echo '<script>document.querySelector(".thongbao").innerText = "Mật khẩu sai rồi !";</script>';                        // $thongbao = "Tài khoản hoặc mật khẩu không chính xác !";
+                    $user = strip_tags($_POST['email']);
+                    $pass = strip_tags($_POST['pass']);
+                    $checkuser = get_info_user($user);
+
+                    if (!$checkuser) {
+                        $error_message .= 'Email không đúng<br>';
+                    } else {
+                        $check = password_verify($pass, $checkuser['pass']);
+                        if ($check) {
+                            if ($checkuser['vaitro'] == 0) {
+                                $error_message .= 'Tài khoản đã bị khóa<br>';
+                            } else {
+                                $_SESSION['name'] = $checkuser;
+                                if ($checkuser['vaitro'] == 1) {
+                                    echo "<script>window.location.href='./admin/index.php'</script>";
+                                } else {
+                                    echo "<script>window.location.href='index.php'</script>";
+                                }
+                            }
+                        } else {
+                            $error_message .= 'Mật khẩu không đúng<br>';
+                        }
+                    }
                 }
             }
             include 'view/taikhoan/dangnhap.php';
             break;
-            case 'thoat':
-                session_unset();
-                // header('location:index.php');
-                //    include_once "view/gioithieu.php";
-                ?>
-<meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
-<?php
-                break;
-    
+
+        case 'thoat':
+            session_unset();
+            // header('location:index.php');
+            //    include_once "view/gioithieu.php";
+?>
+            <meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
+            <?php
+            break;
+
 
         case 'dangky':
+            $error_message = '';
             if (isset($_POST['dangky']) && $_POST['dangky']) {
                 $email = $_POST['email'];
                 $user = $_POST['name'];
                 $pass = $_POST['pass'];
                 $pass_confirm = $_POST['pass-confirn'];
-
+                $vaitro = 2;
                 if ($pass == $pass_confirm) {
                     $pass = $pass_confirm;
-                    insert_taikhoan($email, $user, $pass);
+                    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT);
+
+                    insert_taikhoan($email, $user, $hashedPassword, $vaitro);
                     // cập nhật lại session user mới 
                     echo '<script>document.querySelector(".thongbao").innerText = "Đăng ký thành công :)";</script>';
-                    ?>
-<meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
+            ?>
+                    <meta http-equiv="refresh" content="0;url=index.php?act=dangnhap">
 <?php                } else {
-                    echo '<script>document.querySelector(".thongbao").innerText = "Mật khẩu không khớp :)";</script>';
+                    $error_message = 'Mật khẩu không khớp rồi ! <br>';
                 }
-                // $thongbao = "Tài khoản hoặc mật khẩu không chính xác !";
             }
             include 'view/taikhoan/dangky.php';
             break;

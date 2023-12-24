@@ -24,9 +24,11 @@
                 </div>
             </div>
             <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
+                <?php
+                if ($error_message != '') {
+                    echo '<div class="alert alert-primary thongbao">' . $error_message . '</div>';
+                  } ?>
                 <div class="login-form">
-                    <p class="thongbao" style="color: red;">
-                    </p>
                     <form action="index.php?act=dangky" method="post">
                         <div class="single-login">
                             <label>Email<span>*</span></label>
