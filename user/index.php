@@ -182,7 +182,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 } else if (isset($_POST['cod'])) {
                     $pttt = $_POST['cod'];
                 }
-                
+
                 $_SESSION['tt_donhang'] = [
                     $id_taikhoan,
                     $tong_don,
@@ -205,10 +205,10 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
 
         case 'dh_thanhcong':
-            if (isset($_SESSION['tt_donhang']) && $_SESSION['tt_donhang'] !== "" && isset($_SESSION['cart']) && count($_SESSION['cart'])>0) {
+            if (isset($_SESSION['tt_donhang']) && $_SESSION['tt_donhang'] !== "" && isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                 $tt_donhang = $_SESSION['tt_donhang'];
                 $id_donhang = tao_dh($tt_donhang[0], $tt_donhang[1], $tt_donhang[2], $tt_donhang[3], $tt_donhang[4], $tt_donhang[5], $tt_donhang[6], $tt_donhang[7], $tt_donhang[8], $tt_donhang[9]);
-                         
+
                 foreach ($_SESSION['cart'] as $key) {
                     tao_dhct($key['quantity'], $key['price'], $key['id'], $id_donhang, $key['name'], $key['img']);
                     $_SESSION['cart'] = [];
@@ -217,6 +217,32 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include 'view/thanhtoan/dh_thanhcong.php';
             break;
 
+        case 'lichsu_dh':
+            if (isset($_SESSION['name'])) {
+                $lichsu_dh = lichsu_dh($_SESSION['name']['id_taikhoan']);
+            }
+            include 'view/taikhoan/lichsu_dh.php';
+            break;
+
+        case 'ctiet_lsdh':
+            if (isset($_SESSION['name']) && isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $chitiet_lichsu_dh_one = chitiet_lichsu_dh_one($_GET['id_order']);
+                $chitiet_lichsu_dh_all = chitiet_lichsu_dh_all($_GET['id_order']);
+            }
+            include 'view/taikhoan/ctiet_lsdh.php';
+            break;
+
+        case 'update_dh':
+            if (isset($_POST['huy_dh'])) {
+                update_dh( 0 , $_POST['id_order']);
+                echo "<script> window.location.href='index.php?act=lichsu_dh';</script>";
+            }
+
+            if (isset($_POST['da_nh'])) {
+                update_dh( 5 , $_POST['id_order']);
+                echo "<script> window.location.href='index.php?act=lichsu_dh';</script>";
+            }
+            break;
 
         case 'gioithieu':
             include 'view/gioithieu.php';

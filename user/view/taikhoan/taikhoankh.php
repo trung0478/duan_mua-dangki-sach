@@ -40,12 +40,8 @@
                                 <div class="myaccount-tab-menu nav" role="tablist">
                                     <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fa fa-dashboard"></i>
                                         Bảng điều khiển</a>
-                                    <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
+                                    <a href="?act=lichsu_dh"><i class="fa fa-cart-arrow-down"></i>
                                         Đơn đặt hàng</a>
-
-                                    <a href="#payment-method" data-bs-toggle="tab"><i class="fa fa-credit-card"></i>
-                                        Phương thức thanh toán</a>
-
                                     <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Chi tiết tài
                                         khoản</a>
                                     <a href="index.php?act=thoat"><i class="fa fa-sign-out"></i> Đăng xuất</a>
@@ -118,18 +114,6 @@
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
-
-
-
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="payment-method" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h5>Payment Method</h5>
-                                            <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->
-
 
 
                                     <!-- Single Tab Content Start -->

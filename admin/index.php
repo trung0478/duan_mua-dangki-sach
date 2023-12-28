@@ -5,6 +5,7 @@ include 'model/sach.php';
 include 'model/binhluan.php';
 include 'model/trangthai.php';
 include 'model/nguoidung.php';
+include 'model/donhang.php';
 include '../global.php';
 
 
@@ -140,20 +141,19 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
 
             if (isset($_POST['update'])) {
-                update_nguoidung($_POST['vaitro'],$_POST['trangthai'],$_GET['id']);
+                update_nguoidung($_POST['vaitro'], $_POST['trangthai'], $_GET['id']);
                 echo "<script> window.location.href='index.php?act=list_nd';</script>";
             }
             include 'view/nguoidung/update_nguoidung.php';
             break;
-    
+
         case 'delete_nd':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-            delete_nguoidung($_GET['id']);
-            echo "<script> window.location.href='index.php?act=list_nd';</script>";
+                delete_nguoidung($_GET['id']);
+                echo "<script> window.location.href='index.php?act=list_nd';</script>";
             }
             break;
 
-            // BINH LUAN
             // BINH LUAN
         case 'list_bl':
             $list_bl = list_bl();
@@ -174,6 +174,31 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
             $list_bl = loadAll_bl($id);
             include 'view/binhluan/chitiet_binhluan.php';
+            break;
+
+        case 'list_dh':
+            $list_dh = list_dh();
+            include 'view/donhang/list_donhang.php';
+            break;
+
+        case 'chitiet_dh':
+            if (isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $chitiet_lichsu_dh_one = chitiet_lichsu_dh_one($_GET['id_order']);
+                $chitiet_lichsu_dh_all = chitiet_lichsu_dh_all($_GET['id_order']);
+            }
+            include 'view/donhang/chitiet_dh.php';
+            break;
+
+        case 'update_dh':
+            if (isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $chitiet_lichsu_dh_one = chitiet_lichsu_dh_one($_GET['id_order']);
+                $chitiet_lichsu_dh_all = chitiet_lichsu_dh_all($_GET['id_order']);
+            }
+            if (isset($_POST['sua_tt'])) {
+                update_dh($_POST['trang_thai'], $_POST['id_order']);
+                echo "<script> window.location.href='index.php?act=list_dh';</script>";
+            }
+            include 'view/donhang/update_dh.php';
             break;
     }
 } else {

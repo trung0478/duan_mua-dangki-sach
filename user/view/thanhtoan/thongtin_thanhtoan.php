@@ -31,14 +31,19 @@
 if (isset($one_user) && is_array($one_user)) {
     extract($one_user);
 }
-?>
 
+if (isset($_SESSION['name'])) {
+   echo '<script> var isLogin=true </script>';
+}else{
+   echo '<script> var isLogin=false </script>';
+}
+?>
 <!-- checkout-area-start -->
 <div class="checkout-area mb-70">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="?act=dat_hang" method="post">
+                <form action="?act=dat_hang" method="post" id="dat_hang">
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="checkbox-form">
@@ -132,7 +137,7 @@ if (isset($one_user) && is_array($one_user)) {
                                             <tr class="order-total">
                                                 <th>Tổng cộng</th>
                                                 <td><strong><span class="amount"><?= number_format($sum + 30000, '0', '.', '.') ?><u>đ</u></span></strong>
-                                                <input type="hidden" name="tong_don" value="<?=$sum + 30000?>">
+                                                    <input type="hidden" name="tong_don" value="<?= $sum + 30000 ?>">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -156,6 +161,7 @@ if (isset($one_user) && is_array($one_user)) {
                                     <div class="payment-accordion">
                                         <div class="order-button-payment">
                                             <input name="dathang" type="submit" value="Đặt hàng">
+                                            <p class="text-danger text-center mt-2" id="message_nologin" style="display: none;">Bạn cần đăng nhập để tiến hành thanh toán</p>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +174,6 @@ if (isset($one_user) && is_array($one_user)) {
     </div>
 </div>
 <script>
-
     // làm cho input radio chỉ chọn ra 1 option
     const checkboxes = document.querySelectorAll('input[type="radio"]');
     checkboxes.forEach(function(checkbox) {
@@ -186,7 +191,16 @@ if (isset($one_user) && is_array($one_user)) {
     // Chọn mặc định cho input radio
     const default_option = document.querySelector('#default_option');
     if (default_option) {
-        default_option.checked=true;
+        default_option.checked = true;
     }
 
+    // Đăng nhập mới được thanh toán
+    const dat_hang = document.getElementById('dat_hang');
+    dat_hang.addEventListener('submit', (ev) => {
+        if (!isLogin) {
+            // ngăn chặn hành vi submit mặc định của form
+            ev.preventDefault();
+            document.getElementById('message_nologin').style.display='block'
+        }
+    })
 </script>

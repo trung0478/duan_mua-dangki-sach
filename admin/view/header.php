@@ -111,7 +111,7 @@
                                 <i class="fa-regular fa-comment"></i></i>Bình luận </a>
                         </li>
                         <li class="has-submenu">
-                            <a href="#">
+                            <a href="?act=list_dh">
                                 <i class="dripicons-copy"></i>Đơn hàng</a>
                         </li>
                         <li class="has-submenu">
