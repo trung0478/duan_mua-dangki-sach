@@ -30,4 +30,7 @@ function delete_danhmuc($iddm)
     $sql = "delete from danhmuc where id_danhmuc=$iddm";
     pdo_execute($sql);
 }
+
+
+
 ?>
