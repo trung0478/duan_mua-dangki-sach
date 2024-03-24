@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
-function pdo_get_connection(){
-    $dburl = "mysql:host=localhost;dbname=duan_sach;charset=utf8";
+function pdo_get_connection()
+{
+    $dburl = "mysql:host=localhost;dbname=book_manager;charset=utf8";
     $username = 'root';
     $password = '';
     $conn = new PDO($dburl, $username, $password);
@@ -12,53 +14,49 @@ function pdo_get_connection(){
 }
 
 
-function pdo_execute($sql){
+function pdo_execute($sql)
+{
     $sql_args = array_slice(func_get_args(), 1);
-    try{
+    try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
-    }
-    catch(PDOException $e){
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally{
+    } finally {
         unset($conn);
     }
 }
 
 
-function pdo_query_one($sql){
+function pdo_query_one($sql)
+{
     $sql_args = array_slice(func_get_args(), 1);
-    try{
+    try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
-    }
-    catch(PDOException $e){
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally{
+    } finally {
         unset($conn);
     }
 }
 
-function pdo_query_all($sql){
+function pdo_query_all($sql)
+{
     $sql_args = array_slice(func_get_args(), 1);
-    try{
+    try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
         $rows = $stmt->fetchAll();
         return $rows;
-    }
-    catch(PDOException $e){
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally{
+    } finally {
         unset($conn);
     }
 }
-?>
